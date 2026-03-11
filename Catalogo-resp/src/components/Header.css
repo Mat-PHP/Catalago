@@ -1,0 +1,114 @@
+.header{
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 1000;
+    border- bottom: var(--border);
+}
+
+.cointainer.headerzin{
+    position: relative;
+    display: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px irem;
+
+}
+
+.logo strong{
+    font-weight: 800;
+    font-size: 1.1rem;
+
+}
+
+.sanduicher{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    gap: 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+
+}
+.hamburguin{
+    width: 100px;
+    height: 2px;
+    background: var(--text);
+    border: -radius: 2px;
+
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    
+
+}
+
+.sanduiche.aberta.hamburguin:nth-child(1){
+    transform:translate(6px) rotate(45deg);
+
+}
+.sanduiche.aberta.hamburguin:nth-child(2){
+    opacity: 0;
+
+}
+.sanduiche.aberta.hamburguin:nth-child(3){
+    transform:translate(6px) rotate(45deg);
+
+}
+
+
+.nav{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 0px);
+    display: grid;
+    background: var(--white);
+    padding: 12px irem;
+    border-top:var(--border);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity;0.2s ease transform: 0.2ease,
+
+}
+
+.nav.aberta{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+}
+
+.nav.a{
+    color:var(--text);
+    padding: 10px 8px;
+    border-radius: 8px;
+}
+
+.nav a:hover{
+    background: var(--bg2);
+
+}
+
+@media (min-width: 1024px){
+    .sanduiche{
+        display: flex;
+        gap:irem;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        border:0;
+        
+    }
+}
+

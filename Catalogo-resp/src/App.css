@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --bg: #a043bdff;
+
+  --bg2: #429b28ff
+  --primary: #3795c0ff
+  --secundary: #fff
+  --accent:  #fff
+
+
+  --text:  #fff
+  --focus: #261747ff
+
+  --white: #fff
+  --black: #fff
+
+  font size: 16´px//Default
+}
+
+
+*{
+    box-sizing: border-box; //nao estoura o limite
+
+}
+
+
+
+
+body{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+
+  margin;0;
+  color; var(--text);
+  background:
+  radial-gradient(700px 350px at 15% 10%, var)
+  (--primary), transparent 60%),
+    radial-gradient(700px 350px at 15% 10%, var)
+  (--secundar), transparent 60%),
+    radial-gradient(700px 350px at 15% 10%, var)
+  (--accen), transparent 60%),
+
+  var(--bg);
+
+  {
+    img imagem nuca estourada o conteiner 
+
+    heigt: auto;
+    display: block;
+  }
+  
+  
+  
+  }
+
+h1,h2,h3{
+   font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+a:focus-visible
+button:focus-visible{
+    outline: 3px solid var(--focus);
+outline: - offset: 3px;
+border-radius: 10px;
+
+
+.container{
+    width: min(1100px,92%);
+    margin: 0 auto;
+
+}
+
+main{
+    padding: 1rem 0.5rem;
+    
+}
