@@ -1,0 +1,79 @@
+
+.topinho{
+    background: var(--white);
+    border: var(--border);
+    border-radius: 1.1ram;
+    box-shadow: var(--shadow);
+    padding: irem;
+
+
+    display: grid;
+    gap: 0.8rem;
+}
+
+.topinho-conteudo{
+    margin: 0;
+    font-size: 2.3rem;
+    line-height: 1.8;
+}
+
+.topinho-conteudo p{
+
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    max-width: 60ch;
+
+
+    
+}
+
+.topinho-card{
+    display: grid;
+    place-items: center;
+}
+
+.top-cardizinho{
+    width: 100;
+    background: linear-gradient(145deg,var(--bg), var(--bg2));
+
+    border: var(--border);
+    border: radius 1rem;
+    padding: 0.8rem 0.3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.top-cardizinho.titulo{
+    margin: 0;
+    font-weight: 900;
+    line-height: 1;
+
+}
+
+.cardizinhi.img{
+    width: 50%;
+
+}
+
+
+@media (min-width: 760px){
+    .topinho{
+       padding: 1.5rem;
+       gap: 0.8;
+
+
+    }
+    .cardizinho-img{
+        width: 45%;
+        
+    }
+
+    .top-cardizinho{
+        width: 80%;
+        padding: 1rem;
+         
+    }
+}
+
+
+
