@@ -12,10 +12,75 @@
     font-size: 1.2;
 
 }
-.Mapa{
+.mapa{
     width: 100%;
     height: 320px;
     border: 2px solid #6bcdfe;
     border-radius: 10px;
     
 }
+
+
+.painel{
+    background: #1a0ba7;
+    border: 2px solid #e78383;
+    padding: 1rem;
+    margin-bottom: 12px;
+    border-radius: 12;
+}
+
+.painel-topo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+
+
+}
+
+
+.botao{
+    background: #1a0ba7;
+    color:white;
+    padding:  6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    
+}
+
+.botao:hover{
+    background: #1a0ba7;
+    text- decoration: underline;
+
+}
+
+
+
+.painel span{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a0ba7;
+
+}
+.lista-pontos{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-pontos-item{
+    display: grid;
+    grid-template-columns: 48px 1fr 110px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px  0;
+    border-top:  1px dashed #ddd; 
+}
+
+
+.dist{
+    text-align: right;
+    color: #1a0ba7;
+}
+

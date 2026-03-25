@@ -1,0 +1,13 @@
+[
+
+    {
+        "id":"ql",
+        "titulo": "pergunta 1",
+        "prompt": "qual e a cor do cabelo",
+        "resposta":["azul","cor azul"],
+        "dica": "e so olhar pra ela",
+        "icon":"1"
+        
+
+    }
+]
