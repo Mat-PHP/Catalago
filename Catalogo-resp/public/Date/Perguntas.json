@@ -1,13 +1,30 @@
 [
-
     {
-        "id":"ql",
+        "id": "as1",
         "titulo": "pergunta 1",
-        "prompt": "qual e a cor do cabelo",
-        "resposta":["azul","cor azul"],
-        "dica": "e so olhar pra ela",
-        "icon":"1"
-        
-
+        "prompt": "Qual o nome do protagonista italiano que acompanhamos do nascimento até a morte?",
+        "resposta": ["Ezio Auditore", "Ezio"],
+        "dica": "Auditore da Firenze",
+        "icon": "https://img.cdndsgni.com/preview/10575428.jpg"
+    },
+    {
+        "id": "as2",
+        "titulo": "pergunta 2",
+        "prompt": "Qual é a arma icônica escondida no pulso de todos os assassinos?",
+        "resposta": ["Lâmina Oculta", "Hidden Blade"],
+        "dica": "Fica escondida sob a manga",
+        "icon": "https://cdn-icons-png.flaticon.com/512/25/25628.png"
+    },
+    {
+        "id": "as3",
+        "titulo": "pergunta 3",
+        "prompt": "Como se chama a máquina usada para acessar as memórias genéticas dos antepassados?",
+        "resposta": ["Animus"],
+        "dica": "Abstergo Industries",
+        "icon": "https://img.freepik.com/vetores-premium/mira-vermelha-seta-ideia-acerto-perfeito-vencedor-alvo-objetivo-sucesso-sinal-de-simbolo-de-icone-de-alfinete-icone-de-alvo_659151-1486.jpg"
     }
 ]
+
+
+
+
