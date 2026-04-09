@@ -1,49 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+IE:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
+  --bg: #a043bd;
+  --bg2: #429b28;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+:root{
+    --bg: #123683;
+    --bg2:  #53b612;
+    --text:  #ce4a4a;
+    --primary: #b91414;
+    --primary-claro: #ced1d3;
+    --primary-escuro: #0f472d;
+    --primary-text:  #0c5e6d;
+ 
+    --secundary: #197991;
+    --secundary-claro: #4c524d;
+    --secundary-escuro: #040946;
+    --secundary-text: #301b1b;
+    --ring: #503030;
+    --border: #361a1a;
+    --border2:  #dd1e58;
+    --border3:  #1b456d;
+    --accent:  #081011;
+    --accent-bg: #459e67;
+    --accent-text: #281133;
+ 
+    --shadow: #3a1a1a;
+    --hover-shadow: #b8cc5f;
+    --accent-shadow: #0c0404;
+    --locked: #eb9999;
+ 
+    --solved-border: #5e0c0c;
+    --solved-bg: #470970;
+ 
+    --white: #20880600;
+    --black: #61cffa00;
+    --error: #01121400;
+    --success:  #8b809700;
+ 
+ 
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto black;
+body{
+  font-family:  "Montserrat alternates", sans-serif;
+  font-weight: 400;
+  font-style: normal ;
 }
 
+h1,h2,h3{
+  font-family: "Henny Penny", system-ui,;
+  font-weight: 400;
+  font-style: normal; 
+}
+
+}
