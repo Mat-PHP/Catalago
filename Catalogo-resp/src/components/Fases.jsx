@@ -1,76 +1,74 @@
-import { useMemo, useState } from "react"
-import QUESTOES from "../..public/data/perguntas.json"
-import "fases.css"
+import { useMemo, useState } from "react";
+// Corrigido: caminho do JSON (removido os .. extras se estiver em src/components)
+import QUESTOES from "../../public/data/perguntas.json"; 
+import "./fases.css"; // Corrigido: falta do "./"
 
-export default function Fases(){
+import IconGrid from "./IconGrid";
 
-    const [selcionada,setselecionada]=useState(null);
-    const [trancada,settrancadas]=useState(0);
-    const[resolvidas,setresolvidas]= useState(() => new Set())
+export default function Fases() {
+    const [selecionada, setSelecionada] = useState(null); // Corrigido: nome da variável
+    const [trancada, setTrancada] = useState(0);
+    const [resolvidas, setResolvidas] = useState(() => new Set());
 
-    const total =QUESTOES.length
+    const total = QUESTOES.length;
 
-    const handleopen = (q) => selcionada(q);
-    const handleclose = () => selcionada(null);
-
+    const handleOpen = (q) => setSelecionada(q);
+    const handleClose = () => setSelecionada(null);
 
     const handleCorrect = (id) => {
-        setresolvidas(prev) => {
+        setResolvidas((prev) => {
             const next = new Set(prev);
             next.add(id);
-            return next
+            return next;
         });
-        const idx = QUESTOES.findIndex((q)=>
-     q.id === id)
-        if (idex > - 1 && idx <QUESTOES.length - 1){
-            settrancadas((prev => Math.max(prev,idx +1)))
 
+        const idx = QUESTOES.findIndex((q) => q.id === id);
+        // Corrigido: index/idx e lógica de destrancar
+        if (idx > -1 && idx < QUESTOES.length - 1) {
+            setTrancada((prev) => Math.max(prev, idx + 1));
         }
-    }
-const progresso = useMemo(() =>{
-    const perguntasResolvidas = resolvidas.size
+    };
 
+    const progresso = useMemo(() => {
+        const perguntasResolvidas = resolvidas.size;
+        const porcentagem = Math.round((perguntasResolvidas / total) * 100) || 0; // Corrigido: Math.round
 
-    const porcentagem = match.round(  (perguntasResolvidas/total) *100)
+        return {
+            resolvidas: perguntasResolvidas,
+            total: total,
+            porcentagem: porcentagem
+        };
+    }, [resolvidas, total]);
 
-    return{
-        resolvidas: perguntasResolvidas,
-        total: total,
-        porcentagem:porcentagem
-    }
-}, [resolvidas, total])
+    return (
+        <main className="questoes">
+            <header className="q-header">
+                <h1 className="q-title">Caça Morango~</h1>
+                <p className="q-subtitle">Toque no ícone para abrir a pergunta</p>
 
-return{
-    <main className= "questoes">
-    <header> className =" q-header">
-    <h1 className="q-title" > Caça Morango~</h1>
-    <p className="q-subtitle"> Toque no icone para abrir  a perguntas
-    </p>
+                <div className="perigos">
+                    <div
+                        className="progresso-bar"
+                        role="progressbar"
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-valuenow={progresso.porcentagem}
+                        aria-label={`progresso: ${progresso.resolvidas} de ${progresso.total} resolvidas`}
+                        style={{ width: `${progresso.porcentagem}%` }}
+                    />
+                    <span className="progress-label">
+                        {progresso.resolvidas} / {progresso.total}
+                    </span>
+                </div>
+            </header>
 
-
-    <div className="perigos">
-    </div
-         className="progresso-bar"
-         role = "progressbar'
-         aria-valuemin={0}
-         aria- valuemax= {100}
-         aria- valuenow= {progresso.porcentagem}
-         aria-label= {'progresso: ${progresso.resolvida} de
-            ${progresso.total} resolvida'}
-            style= {{width: ${progresso.porcentagem}%'}}/>
-
-
-
-            <span>className="progress-label"
-                {progresso.resolvidas} /
-                {progresso.total}
-            </span>
-    
-    
-    </header>
-}
-
-
-})
-
+            <IconGrid
+                questoes={QUESTOES}
+                onOpen={handleOpen}
+                modalOpen={Boolean(selecionada)}
+                trancada={trancada}
+                resolvidas={resolvidas}
+            />
+        </main>
+    );
 }
