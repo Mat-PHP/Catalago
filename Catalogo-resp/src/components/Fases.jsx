@@ -1,19 +1,19 @@
 import { useMemo, useState } from "react";
-// Corrigido: caminho do JSON (removido os .. extras se estiver em src/components)
 import QUESTOES from "../../public/data/perguntas.json"; 
-import "./fases.css"; // Corrigido: falta do "./"
+import "./fases.css";
 
 import IconGrid from "./IconGrid";
+import Questiondialog from "./Questiondialog";
 
 export default function Fases() {
-    const [selecionada, setSelecionada] = useState(null); // Corrigido: nome da variável
+    const [selecionada, setSelecionada] = useState(null);
     const [trancada, setTrancada] = useState(0);
     const [resolvidas, setResolvidas] = useState(() => new Set());
 
     const total = QUESTOES.length;
 
     const handleOpen = (q) => setSelecionada(q);
-    const handleClose = () => setSelecionada(null);
+    const handleClose = () => setSelecionada(null); // Corrigido para bater com a chamada abaixo
 
     const handleCorrect = (id) => {
         setResolvidas((prev) => {
@@ -23,7 +23,6 @@ export default function Fases() {
         });
 
         const idx = QUESTOES.findIndex((q) => q.id === id);
-        // Corrigido: index/idx e lógica de destrancar
         if (idx > -1 && idx < QUESTOES.length - 1) {
             setTrancada((prev) => Math.max(prev, idx + 1));
         }
@@ -31,7 +30,7 @@ export default function Fases() {
 
     const progresso = useMemo(() => {
         const perguntasResolvidas = resolvidas.size;
-        const porcentagem = Math.round((perguntasResolvidas / total) * 100) || 0; // Corrigido: Math.round
+        const porcentagem = Math.round((perguntasResolvidas / total) * 100) || 0;
 
         return {
             resolvidas: perguntasResolvidas,
@@ -69,6 +68,18 @@ export default function Fases() {
                 trancada={trancada}
                 resolvidas={resolvidas}
             />
+
+            {selecionada && (
+                <Questiondialog
+                    questoes={selecionada}
+                    // Correção: Adicionadas chaves {} e corrigida a sintaxe da arrow function
+                    index={QUESTOES.findIndex((q) => q.id === selecionada.id)}
+                    total={total}
+                    // Correção: Nome da função estava "hundleClose" (com u)
+                    onclose={handleClose} 
+                    onCorrect={handleCorrect}
+                /> // Correção: Fechamento correto da tag
+            )}
         </main>
     );
 }
